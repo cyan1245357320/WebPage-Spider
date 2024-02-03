@@ -1,19 +1,5 @@
-This is simple example how to use PHP in Apify. It uses custom Dockerfile based on `php:7.0-cli` image.
-
-## Dockerfile
-
-```Dockerfile
-FROM php:7.0-cli
-
-COPY ./* ./
-
-CMD [ "php", "./main.php" ]
-```
-
-## main.php
-
-```php
 <?php
+
 print "Starting ...\n";
 print "ENV vars:\n";
 print_r($_ENV);
@@ -23,4 +9,3 @@ print "Searching for <h1> tag contents ...\n";
 preg_match_all('/<h1>(.*?)<\/h1>/', $exampleComHtml, $matches);
 print "Found: " . $matches[1][0] . "\n";
 print "I am done!\n";
-```
